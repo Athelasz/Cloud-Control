@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Control</title>
+    <link rel="shortcut icon" href="/img/profile3.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid px-0" id="hero-section">
+      <div class="container align-items-center g-0">
+        <div
+          class="row text-white min-vh-100 justify-content-center align-items-center g-0"
+        >
+          <div class="col-12 col-lg-8 mt-4">
+            <div class="card overlay text-white p-3">
+              <div class="row g-0 align-items-center justify-content-center">
+                <div class="col-8 card-header">
+                  <h5 id="date"></h5>
+                </div>
+                <div class="col-4 card-header">
+                  <button
+                    onclick="setDocumentWeather()"
+                    class="btn btn-success overlay"
+                  >
+                    Refresh
+                  </button>
+                </div>
+                <div class="col-12">
+                  <div class="card-body">
+                    <h3 class="card-text m-0">Halle, Belgium</h3>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="card-body">
+                    <h1 class="card-text m-0">
+                      <span id="temperature_2m">--</span>
+                    </h1>
+                    <p class="card-text">
+                      feels like <span id="apparent_temperature">--</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <span id="weather_code_icon"></span>
+                </div>
+                <div class="col-12">
+                  <div class="card-body">
+                    <h3 class="card-text mt-1" id="weather_code_text">--</h3>
+                    <div class="row pt-2">
+                      <div class="col-4">
+                        <h6 class="card-text">Wind</h6>
+                        <p class="card-text">
+                          <span class="card-text" id="wind_speed_10m">--</span
+                          ><br />
+                          <span id="wind_direction_10m"></span>
+                        </p>
+                      </div>
+                      <div class="col-4">
+                        <h6 class="card-text">Precipitation</h6>
+                        <p class="card-text" id="precipitation">--</p>
+                      </div>
+                      <div class="col-4">
+                        <h6 class="card-text">Humidity</h6>
+                        <p class="card-text" id="relative_humidity_2m">--</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="weather_daily"
+          class="row text-white align-items-center overlay border border-1"
+        ></div>
+      </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
+      integrity="sha512-VK2zcvntEufaimc+efOYi622VN5ZacdnufnmX7zIhCPmjhKnOi9ZDMtg1/ug5l183f19gG1/cBstPO4D8N/Img=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/javascript.js"></script>
+  </body>
+</html>

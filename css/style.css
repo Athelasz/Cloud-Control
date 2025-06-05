@@ -1,0 +1,14 @@
+#hero-section {
+  background-image: url(/img/sun-clouds3.jpg);
+  background-size: cover;
+  background-position: 45% 100%;
+  color: beige;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.725);
+}
+
+.card-daily {
+  background-color: transparent;
+}

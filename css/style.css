@@ -9,6 +9,8 @@
   background-color: rgba(0, 0, 0, 0.725);
 }
 
+.card-current,
 .card-daily {
-  background-color: transparent;
+  border: 3px solid rgba(83, 83, 83, 0.833);
+  border-radius: 5%;
 }

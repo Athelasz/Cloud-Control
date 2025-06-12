@@ -16,73 +16,73 @@
   </head>
   <body>
     <div class="container-fluid px-0" id="hero-section">
-      <div class="container align-items-center g-0">
-        <div
-          class="row text-white min-vh-100 justify-content-center align-items-center g-0"
-        >
-          <div class="col-12 col-lg-8 mt-4">
-            <div class="card overlay text-white p-3">
-              <div class="row g-0 align-items-center justify-content-center">
-                <div class="col-8 card-header">
-                  <h5 id="date"></h5>
+      <div class="container min-vh-100 g-0">
+        <div class="row text-white g-0 m-0 py-3">
+          <div class="col-12 col-md-8 col-lg-6 m-0">
+            <div class="card card-current overlay text-white">
+              <div class="row g-0 justify-content-center align-items-center">
+                <div class="col-9 card-header">
+                  <h4 id="date"></h4>
                 </div>
-                <div class="col-4 card-header">
+                <div class="col-3 card-header text-end align-self-start">
                   <button
                     onclick="setDocumentWeather()"
-                    class="btn btn-success overlay"
+                    class="btn btn-sm btn-info"
                   >
                     Refresh
                   </button>
                 </div>
                 <div class="col-12">
                   <div class="card-body">
-                    <h3 class="card-text m-0">Halle, Belgium</h3>
+                    <h2 class="card-text">Halle, Belgium</h2>
                   </div>
                 </div>
                 <div class="col-6">
-                  <div class="card-body">
-                    <h1 class="card-text m-0">
+                  <div class="card-body text-center">
+                    <h1 class="card-text">
                       <span id="temperature_2m">--</span>
                     </h1>
-                    <p class="card-text">
+                    <h6 class="card-text">
                       feels like <span id="apparent_temperature">--</span>
+                    </h6>
+                  </div>
+                </div>
+                <div class="col-6 col-md-5 col-lg-4">
+                  <span id="weather_code_icon"></span>
+                </div>
+                <div class="col-12 mb-2">
+                  <div class="card-body">
+                    <h5 class="card-text" id="weather_code_text">--</h5>
+                  </div>
+                </div>
+                <div class="col-4 mb-4 p-0 align-self-start">
+                  <div class="card-body p-0 ps-3">
+                    <h6 class="card-text">Wind</h6>
+                    <p class="card-text">
+                      <span class="card-text" id="wind_speed_10m">--</span
+                      ><br />
+                      <span id="wind_direction_10m"></span>
                     </p>
                   </div>
                 </div>
-                <div class="col-6">
-                  <span id="weather_code_icon"></span>
+
+                <div class="col-5 mb-3 p-0 align-self-start">
+                  <div class="card-body p-0">
+                    <h6 class="card-text">Precipitation</h6>
+                    <p class="card-text" id="precipitation">--</p>
+                  </div>
                 </div>
-                <div class="col-12">
-                  <div class="card-body">
-                    <h3 class="card-text mt-1" id="weather_code_text">--</h3>
-                    <div class="row pt-2">
-                      <div class="col-4">
-                        <h6 class="card-text">Wind</h6>
-                        <p class="card-text">
-                          <span class="card-text" id="wind_speed_10m">--</span
-                          ><br />
-                          <span id="wind_direction_10m"></span>
-                        </p>
-                      </div>
-                      <div class="col-4">
-                        <h6 class="card-text">Precipitation</h6>
-                        <p class="card-text" id="precipitation">--</p>
-                      </div>
-                      <div class="col-4">
-                        <h6 class="card-text">Humidity</h6>
-                        <p class="card-text" id="relative_humidity_2m">--</p>
-                      </div>
-                    </div>
+                <div class="col-3 mb-3 p-0 align-self-start">
+                  <div class="card-body p-0">
+                    <h6 class="card-text">Humidity</h6>
+                    <p class="card-text" id="relative_humidity_2m">--</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div
-          id="weather_daily"
-          class="row text-white align-items-center overlay border border-1"
-        ></div>
+        <div id="weather_daily" class="row text-white g-0 m-0 p-0"></div>
       </div>
     </div>
     <!-- Bootstrap JS -->

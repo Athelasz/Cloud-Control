@@ -161,41 +161,42 @@ function updateDailyData(weatherData) {
     index < weatherData.daily.temperature_2m_max.length;
     index++
   ) {
-    let cardDaily = `<div class="col-12 col-md-4 col-xl-3 m-0 p-0">
-                    <div class="card card-daily text-white">
-                      <div class="row g-0 m-0">
+    let cardDaily = `<div class="col-12 col-md-4 col-xl-3 m-0">
+                    <div class="card card-daily overlay text-white">
+                      <div class="row g-0">
                         <div class="col-12">
-                          <h5 class="card-header">${new Date(
+                          <h5 class="card-header p-2">${new Date(
                             weatherData.daily.time[index]
                           ).toLocaleDateString("en-UK", {
                             weekday: "long",
                           })}</h5>
                         </div>
-                        <div class="col-12 col-md-5">
-                          <div class="card-body">
-                            <h5 class="card-text m-0">
+                        <div class="col-6 align-content-center">
+                          <div class="card-body p-0">
+                            <h5 class="card-text text-center">
                             ${
                               weatherData.daily.temperature_2m_max[index] +
                               weatherData.daily_units.temperature_2m_max
                             } </h5>
-                            <h5>
+                            <h5 class="card-text text-center">
                             ${
                               weatherData.daily.temperature_2m_min[index] +
                               weatherData.daily_units.temperature_2m_min
                             }</h5>
                           </div>
                         </div>
-                        <div class="col-12 col-md-7 align-content-center">
+                        <div class="col-6 my-2 p-0">
                           <img src="/img/weather-icons/${weatherCodeIcon.get(
                             weatherData.daily.weather_code[index]
-                          )}" class="card-img-top w-50" alt="Icon is missing"/>                          
+                          )}" class="card-img-top img-fluid w-50" alt="Icon is missing"/>                          
                         </div>
-                        <div class="col-12 col-md-5">
-                          <div class="card-body">
+                        <div class="col-6 mb-3 p-0 align-content-start">
+                          <div class="card-body p-0 ps-2">
                             <h6 class="card-text">Wind</h6>
                             <p class="card-text">
                             ${
                               weatherData.daily.wind_speed_10m_max[index] +
+                              " " +
                               weatherData.daily_units.wind_speed_10m_max
                             }<br/>                              
                               ${getWindDirectionName(
@@ -206,8 +207,8 @@ function updateDailyData(weatherData) {
                             </p>
                           </div>
                         </div>
-                        <div class="col-12 col-md-7">
-                          <div class="card-body">
+                        <div class="col-6 mb-3 p-0 align-content-start">
+                          <div class="card-body p-0">
                             <h6 class="card-text">Precipitation</h6>
                             <p class="card-text">
                             ${
@@ -219,6 +220,7 @@ function updateDailyData(weatherData) {
                             }<br/>
                               ${
                                 weatherData.daily.precipitation_sum[index] +
+                                " " +
                                 weatherData.daily_units.precipitation_sum
                               }
                             </p>
@@ -254,16 +256,22 @@ function updateWeatherData(weatherData) {
     } else if (weatherCurrent[index] == "weather_code") {
       const weatherCodeIconEl = `<img src="/img/weather-icons/${weatherCodeIcon.get(
         weatherData.current["weather_code"]
-      )}" class="card-img-top w-50" alt="Icon is missing"/>`;
+      )}" class="card-img-top img-fluid w-50" alt="Icon is missing"/>`;
 
       document.getElementById("weather_code_icon").innerHTML =
         weatherCodeIconEl;
       document.getElementById("weather_code_text").innerHTML =
         weatherCodeText.get(weatherData.current["weather_code"]);
     } else {
-      document.getElementById(weatherCurrent[index]).innerHTML =
-        weatherData.current[weatherCurrent[index]] +
-        weatherData.current_units[weatherCurrent[index]];
+      var innerHTML = weatherData.current[weatherCurrent[index]];
+      if (
+        weatherCurrent[index] == "wind_speed_10m" ||
+        weatherCurrent[index] == "precipitation"
+      ) {
+        innerHTML += " ";
+      }
+      innerHTML += weatherData.current_units[weatherCurrent[index]];
+      document.getElementById(weatherCurrent[index]).innerHTML = innerHTML;
     }
   }
 
